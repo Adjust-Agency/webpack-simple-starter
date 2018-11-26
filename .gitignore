@@ -1,0 +1,4 @@
+.DS_STORE banished!
+.DS_Store banished!
+node_modules/
+package-lock.json
