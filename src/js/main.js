@@ -1,3 +1,8 @@
-require('../sass/main.scss')
+require('../stylus/main.styl')
 
-console.log("WEBPACK TEST!")
+var template = require('../pug/section.pug')
+
+console.log(template({
+	label: "Google",
+	url: "https://www.google.com"
+}))

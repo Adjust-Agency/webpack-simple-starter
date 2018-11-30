@@ -1,6 +1,5 @@
 const webpack 		= require("webpack");
 const path 			= require("path");
-const autoprefixer 	= require('autoprefixer');
 
 module.exports = {
 	mode: 'development',
@@ -14,20 +13,17 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.s[ac]ss$/,
+				test: /\.styl$/,
 				use:[
-					{
-						loader: 'style-loader', options: { sourceMap: true }
-					},
-					{ 	loader: 'postcss-loader', 
-						options: {
-									sourceMap: true,
-									plugins: [
-										autoprefixer({ browsers: ['last 2 versions', 'ie >= 9']})
-									]
-							}
-					},
-					{ loader: 'sass-loader', options: { sourceMap: true }}
+					{ loader: 'style-loader', options: { sourceMap: true }},
+					{ loader: "css-loader"},
+					{ loader: 'stylus-loader', options: { sourceMap: true }}
+				]
+			},
+			{
+				test: /\.pug$/,
+				use:[
+					{ loader: "pug-loader"}
 				]
 			},
 			{
