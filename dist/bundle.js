@@ -105,7 +105,7 @@ eval("\n\nmodule.exports = ansiHTML\n\n// Reference to https://github.com/sindre
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"body {\\n  background: #ff69b4;\\n}\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/stylus/main.styl?./node_modules/css-loader!./node_modules/stylus-loader??ref--4-2");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"body {\\n  background: #ffc0cb;\\n}\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/stylus/main.styl?./node_modules/css-loader!./node_modules/stylus-loader??ref--4-2");
 
 /***/ }),
 

@@ -1,13 +1,18 @@
+require('dotenv').config()
+
 const webpack 		= require("webpack");
 const path 			= require("path");
+const S3Plugin = require('webpack-s3-plugin')
+
+let mode = process.env.NODE_ENV || "development"
 
 module.exports = {
-	mode: 'development',
+	mode: mode,
 	
 	entry: "./src/js/main.js",
 	output: {
 		path: path.resolve(__dirname, './dist/'),
-		filename: 'bundle.js'
+		filename: 'bundle' +  ( mode == 'production' ? '.min' : '')  + '.js'
 	},
 	
 	module: {
@@ -59,6 +64,19 @@ module.exports = {
 			}
 		]
 	},
+	
+	plugins: [
+	    new S3Plugin({
+	      include: /.*\.js/,
+	      s3Options: {
+	        accessKeyId: process.env.S3_ACCESS_KEY,
+	        secretAccessKey: process.env.S3_SECRET_KEY,
+	      },
+	      s3UploadOptions: {
+	        Bucket: process.env.S3_BUCKET + '/' + process.env.S3_FOLDER
+	      }
+	    })
+	],
 	
 	devServer: {
 		host: '0.0.0.0',
